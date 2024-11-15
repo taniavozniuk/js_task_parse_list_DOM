@@ -20,16 +20,14 @@ function sortList(list) {
   list.innerHTML = '';
 
   items.forEach((item) => list.appendChild(item));
-
-  console.log(list);
 }
 
 function getEmployees(list) {
-  const employees = [];
+  const employeesList = [];
 
   // проходжусь по масиву
   list.querySelectorAll('li').forEach((item) => {
-    employees.push({
+    employeesList.push({
       name: item.textContent.trim(),
       position: item.dataset.position,
       salary: parseFloat(item.dataset.salary.replace(/[$,]/g, '')),
@@ -37,7 +35,7 @@ function getEmployees(list) {
     });
   });
 
-  return employees;
+  return employeesList;
 }
 
 const employees = document.querySelector('ul');
